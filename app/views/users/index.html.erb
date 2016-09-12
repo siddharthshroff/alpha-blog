@@ -1,6 +1,6 @@
 <h1 class="center">Listing all Users</h1>
-
+<%= render 'shared/paginate' %>
 <% @users.each do |user| %>
   <%= render 'list', obj: user %>
 <% end %>
-  
+<%= render 'shared/paginate' %>  
