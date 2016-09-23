@@ -8,8 +8,8 @@ class CreateUsersTest < ActionDispatch::IntegrationTest
     assert_difference 'User.count', 1 do
       post_via_redirect users_path, user: { username: "test2", email: "test2@example.com", password: "password" }
     end
-    #assert_template 'users/show'
-    #assert_match "test", response.body
+    assert_template 'users/show'
+    assert_match "test", response.body
   end
   
 end
