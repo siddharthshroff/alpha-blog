@@ -1,4 +1,9 @@
 <h1 class="center">Listing all Articles for <%= @category.name %></h1>
+<% if logged_in? && current_user.admin? %> 
+  <div class="center">
+    <p><%= link_to "Edit Category Name", edit_category_path(@category) %><p>
+  </div>
+<% end %>
 <%= render 'shared/paginate', obj: @category_articles %>
 <%= render 'articles/article', obj: @category_articles %>
 <%= render 'shared/paginate', obj: @category_articles %>
